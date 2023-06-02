@@ -1,0 +1,44 @@
+.contact{
+    padding: 100px ;
+    width: 100%;
+}
+.first-co , .second-hu , .chat-kro{
+  width: 20%;
+  text-align: center;
+  line-height: 2;
+}
+.first-co > .fa-blender-phone{
+    font-size: 3rem;
+}
+.second-hu > .fa-suitcase{
+    font-size: 3rem;
+}
+.chat-kro > .fa-comments{
+    font-size: 3rem;
+}
+.contact-hu > .chat-kro >.kya-hu >  button{
+    padding: .6rem;
+    margin-top: 1.5rem;
+   background-color: rgb(181, 161, 201);
+   border: none;
+}
+.contact > .contact-hu > .second-hu >.kya >  button {
+    padding: .6rem;
+    margin-top: 1.5rem;
+    background-color: rgb(194, 180, 208);
+}
+.contact > h2{
+    text-align: center;
+    margin-top: 1rem;
+    font-size: 2rem;
+    font-weight: 500;
+    margin-bottom: 3rem;
+}
+.contact-hu{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.contact-hu > .second-hu > p{
+    text-align: center;
+}
