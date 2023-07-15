@@ -4,6 +4,9 @@ import { useState } from 'react'
 import { useSelector } from 'react-redux';
 import { gettotalcart } from '../feautres/Slice';
 import { useDispatch } from 'react-redux';
+import { remove_user } from '../feautres/Slice';
+import { decrease_cart } from '../feautres/Slice';
+import { increase_cart } from '../feautres/Slice';
 export default function Header() {
   const {cart ,Totalquantity ,Totalprice} = useSelector((state)=>{
     return state.carts;
@@ -12,7 +15,15 @@ export default function Header() {
  useEffect(()=>{
   dispatch(gettotalcart())
  } ,[cart])
- 
+ const handlerem = (cartitem)=>{
+  dispatch(remove_user(cartitem));
+ }
+ const handlede = (cartitem)=>{
+  dispatch(decrease_cart(cartitem));
+ }
+ const handleincrease = (cartitem)=>{
+  dispatch(increase_cart(cartitem))
+ }
   return (
     <>
     <div className="mai-wal">
@@ -22,16 +33,17 @@ export default function Header() {
         {
            cart.map((cartitem)=>{
                 return(
-                    <div>
+                    <div className="namaste" key = {cartitem.id}>
                        <img src = {cartitem.url} alt = "ERROR" width="20%"></img>
                        <span className="hai-kya">
                        <span> {cartitem.Title} </span>
                        <span> {cartitem.name} </span>
-                       <button className="btn-wal">-</button>
+                       <button className="btn-wal" onClick={()=>handlede(cartitem)}>-</button>
                         <span className="span-wal"> {cartitem.quantity} </span>
-                       <button className="btn-wal" >+</button>
-                       <span> <i class="fa-sharp fa-solid fa-indian-rupee-sign"></i> {cartitem.quantity*cartitem.price} </span>
-                       <hr></hr>
+                       <button className="btn-wal" onClick={()=>handleincrease(cartitem)}>+</button>
+                       <div> <i class="fa-sharp fa-solid fa-indian-rupee-sign"></i> {cartitem.quantity*cartitem.price} </div>
+                       <button className="btn" onClick={()=>handlerem(cartitem)}>Delete</button>
+                       <div style = {{height:"1px" , width:"100%" ,background:"black"}}></div>
                         </span>
                       
                     </div>

@@ -6,6 +6,10 @@ flex-wrap: wrap;
 justify-content: space-between;
     align-items: center;
 }
+.flex-hu > .stylese:hover{
+    box-shadow: 0 0 3px rgba(0 , 0 , 0 ,0.1);
+    cursor: pointer;
+}
 .part-sa{
     display: flex;
     justify-content: space-between;

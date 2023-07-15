@@ -28,8 +28,8 @@ export default[
           },
           {
             id:4,
-    url:"https://assets.adidas.com/images/w_383,h_383,f_auto,q_auto,fl_lossy,c_fill,g_auto/cb30368fa9b44b44beb8af3100f7154b_9366/essentials-seasonal-graphic-duffel-bag-small.jpg",
-            name: 'Leather Gym Bag',
+            url:"https://assets.adidas.com/images/w_383,h_383,f_auto,q_auto,fl_lossy,c_fill,g_auto/d9269cdd67de4ebe8ecdaf3b007872d8_9366/adidas-rekive-tee.jpg",
+            name: 'BAGGY DESIGNED SHIRT',
             Title:'ADIDAS',
           
             price: 599,

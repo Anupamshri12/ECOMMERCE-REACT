@@ -7,7 +7,7 @@ export default function Move() {
         <h1>FEAUTRED PRODUCTS</h1>
         <div className="squares">
         <div className="square square1" >
-              <div className="likho">
+              <div className="likho" id = "ky">
                 <h4>Men's Activewear</h4>
                 <p>Starting From</p>
                 <div className="type"><h2><i class="fa-sharp fa-solid fa-indian-rupee-sign"></i>399</h2>

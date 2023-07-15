@@ -1,5 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import product from '../Home'
+
 const initialState = { 
    cart:[],
    items: product,
@@ -20,6 +21,7 @@ export const counterSlice = createSlice({
       else{
          const temp = {...action.payload ,quantity:1};
          state.cart.push(temp)
+        
       }
       
      },
@@ -40,10 +42,53 @@ export const counterSlice = createSlice({
       );
       state.Totalprice = parseInt(Totalprice.toFixed(2));
       state.Totalquantity = Totalquantity;
+     },
+     remove_user: (state ,action) =>{
+      const k = state.cart.filter((cartitem)=>{
+         if(cartitem.id === action.payload.id){
+            return false;
+         }
+         return true;
+      })
+      
+      state.cart = k;
+     },
+     decrease_cart: (state ,action) =>{
+       const find = state.cart.findIndex((item)=> item.id === action.payload.id);
+       if(find >= 0){
+          state.cart[find].quantity -= 1;
+          if(state.cart[find].quantity == 0){
+            const k = state.cart.filter((cartitem)=>{
+               if(cartitem.id === action.payload.id){
+                  return false;
+               }
+               return true;
+            })
+            
+            state.cart = k;
+         } 
+         
+       }
+      
+     },
+     increase_cart: (state ,action) =>{
+      const find = state.cart.findIndex((item)=> item.id === action.payload.id);
+      if(find >= 0){
+         state.cart[find].quantity += 1; 
+        
+      }
+   return state;
+     },
+     descr: (state ,action) =>{
+     
+      const newItem = {action ,quantity: 1 };
+      state.cart.push(newItem);
+        
+      
      }
   },
 });
 
 
-export const {addtocart , gettotalcart} = counterSlice.actions;
+export const {addtocart , gettotalcart ,remove_user ,decrease_cart ,increase_cart ,descr} = counterSlice.actions;
 export default counterSlice.reducer;

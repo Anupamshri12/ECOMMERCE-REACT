@@ -72,6 +72,14 @@
 .btn-h > h2{
   font-size: 2rem;
 }
+.con > .btn-k{
+    padding: 12px;
+    background: rgb(240, 181, 240);
+    border: none;
+    outline: none;
+    color: white;
+    text-align: center;
+}
 .card:hover{
     box-shadow: 0 0 10px rgba(0 , 0 , 0 ,0.24);
     cursor: pointer;
@@ -85,4 +93,10 @@
    
     }
 
+}
+@media screen and (max-width:412px) {
+    .container > h1{
+        font-size: 2.4rem;
+        
+         }
 }
