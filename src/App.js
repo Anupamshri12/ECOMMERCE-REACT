@@ -8,6 +8,7 @@ import Contact from './components/Contact';
 import DESCRIBE from './components/DESCRIBE';
 import Login from './components/Login';
 import Protected from './components/Protected';
+import Signup from './components/Signup';
 function App() {
   
   return (
@@ -17,9 +18,11 @@ function App() {
 
 <Routes>
   <Route path = "/" element ={<Fronte/>}></Route>
-  <Route path = "/Header" element ={< Header/>}></Route>
+  <Route path = "/Header" element ={<Protected Component = {Header}/>}></Route>
   <Route path = "/Contact" element = {<Contact/>}></Route>
   <Route path = "/DESCRIBE-details/:id" element = {<DESCRIBE/>}></Route>
+  <Route path = "/signin" element = {<Login/>}></Route>
+  <Route path = "/signup" element = {<Signup/>}></Route>
  
 </Routes>
 
