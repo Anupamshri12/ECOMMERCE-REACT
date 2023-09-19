@@ -4,7 +4,7 @@ import Navbar from './components/Navbar';
 import Fronte from './Fronte';
 import { BrowserRouter as Router , Route ,Routes } from 'react-router-dom';
 import Header from './components/Header'
-import Contact from './components/Contact';
+import CONTACT from './components/CONTACT'
 import DESCRIBE from './components/DESCRIBE';
 import Login from './components/Login';
 import Protected from './components/Protected';
@@ -19,7 +19,7 @@ function App() {
 <Routes>
   <Route path = "/" element ={<Fronte/>}></Route>
   <Route path = "/Header" element ={<Protected Component = {Header}/>}></Route>
-  <Route path = "/Contact" element = {<Contact/>}></Route>
+  <Route path = "/CONTACT" element = {<CONTACT/>}></Route>
   <Route path = "/DESCRIBE-details/:id" element = {<DESCRIBE/>}></Route>
   <Route path = "/signin" element = {<Login/>}></Route>
   <Route path = "/signup" element = {<Signup/>}></Route>

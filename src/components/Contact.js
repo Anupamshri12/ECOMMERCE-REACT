@@ -1,42 +1,50 @@
 import React from 'react'
-import './Contact.css'
-export default function Contact() {
+import { useRef } from 'react';
+import emailjs from '@emailjs/browser'
+import './contact.css'
+export default function CONTACT() {
+    const form = useRef();
+
+    const sendEmail = (e) => {
+      e.preventDefault();
+  
+      emailjs.sendForm('service_txf1r5w', 'template_wgga57r', form.current, '7EVyKmTM2Uc7n2xF2')
+        .then((result) => {
+            console.log(result.text);
+        }, (error) => {
+            console.log(error.text);
+        });
+        alert("Mail Sent Successffuly")
+    };
   return (
-    <div className="contact">
-        <h2>Contact Us</h2>
-        <div className="contact-hu">
-            <div className="first-co">
-            <i class="fa-solid fa-blender-phone"></i>
-                <h3>BY PHONE</h3>
-                <div>
-                    <p>(Monday to Friday ,9am to 4pm IST)</p>
-                    <h4>INDIA Toll Free:</h4>
-                    <p>1-800-123-136</p>
-                    <h4>INTERNATIONAL</h4>
-                    <p>1-604-224-231</p>
-                </div>
-            </div>
-            <div className="second-hu">
+    <div className="section1">
+     <h2>LOVE TO HEAR FROM YOU GET IN TOUCH</h2>
+    <hr></hr>
+    <div className= "contact-hu">
+
+    <form className = "form-hu" ref={form} onSubmit={sendEmail}>
+               
+      <input  type="text" placeholder="Enter Your Name" name="user_name" />
                 
-                <h3>START A NEW CASE</h3>
-                <div className="kya">
-                    <p>Just Sends us your questions or 
-                        concerns by starting a new case and we 
-                        will give you help you need.
-                    </p>
-                    <button>START HERE</button>
-                </div>
-            </div>
-            <div className="chat-kro">
-                <h3>LIVE CHAT</h3>
-                <div>
-                    <p>Chat with our member of our house-in
-                        team.
-                    </p>
-                    <button>START CHAT</button>
-                </div>
-            </div>
-        </div>
+     
+     
+      <input  type="email" placeholder = "Enter your email" name="user_email" />
+     
+      
+  
+      <textarea name="message" placeholder="Enter Your Message" />
+     
+    
+      <input className = "send-kar"type="submit" value="Send" />
+    </form>
+      <div className="form-hu1">
+      <li><i class="fa-solid fa-envelope"></i> shrivastavaanupam46@gmail.com</li>
+      <li><i class="fa-solid fa-phone"></i>+91 9971841732</li>
+      <li><i class="fa-solid fa-location-dot"></i>Jaipur  ,Rajasthan</li>
+      </div>
     </div>
+   
+    </div>
+    
   )
 }
